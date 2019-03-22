@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -25,6 +26,14 @@ namespace WebApplication1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            //Log out of the Owin Midleware
+
+            Request.GetOwinContext().Authentication.SignOut();
+            return View("index");
         }
     }
 }
