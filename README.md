@@ -36,5 +36,5 @@
         }
     }
   ```
-  * Configure ClientId and Secret in web.config.
-
+* Configure ClientId and Secret in web.config.
+* Remove Tcg.DomainSecurity.Module.DomSecModule from web.config
